@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repositorio · Enlaces del Estado Peruano</title>
+
+    <!-- ===== ICONOS PARA INSTALACIÓN ===== -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+    <link rel="manifest" href="img/site.webmanifest" />
+    <meta name="theme-color" content="#0f422b" />
+
+    <!-- ===== FUENTES Y FONTAWESOME ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        /* ===== BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            background: #eef2ee;
+            background-image: radial-gradient(ellipse at 10% 20%, rgba(30, 80, 50, 0.03) 0%, transparent 60%),
+                radial-gradient(ellipse at 90% 80%, rgba(30, 80, 50, 0.04) 0%, transparent 60%);
+        }
+
+        /* ===== TARJETA PRINCIPAL ===== */
+        .menu-card {
+            max-width: 1400px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(20px) saturate(1.3);
+            -webkit-backdrop-filter: blur(20px) saturate(1.3);
+            border-radius: 48px;
+            padding: 2rem 2.4rem 2.4rem;
+            box-shadow: 0 30px 80px -30px rgba(0, 40, 20, 0.25), 0 8px 24px -8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        /* ===== ENCABEZADO ===== */
+        .header-inia {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .logo-emblem {
+            height: 70px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .logo-emblem img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+        .logo-inia-2026 {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .logo-inia-2026 img {
+            height: 55px;
+            width: auto;
+            display: block;
+        }
+
+        /* ===== TÍTULO ===== */
+        .header-title {
+            text-align: center;
+            margin: 0.5rem 0 1.6rem 0;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 2px 12px rgba(0, 40, 20, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .header-title h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0d2a1a;
+            margin: 0;
+        }
+        .header-title .drive-badge {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #123524;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid rgba(30, 80, 50, 0.08);
+        }
+        .header-title .drive-badge i {
+            color: #0f6c3b;
+            font-size: 1.1rem;
+        }
+
+        /* ===== GRID DE BOTONES (5 columnas) ===== */
+        .grid-botones {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.8rem;
+            margin: 0.6rem 0 1rem;
+        }
+
+        /* ===== TÍTULOS DE SECCIÓN (ocupan toda la fila) ===== */
+        .section-title {
+            grid-column: 1 / -1;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: #0d2a1a;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 0.4rem 1.8rem;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            display: inline-block;
+            width: fit-content;
+            margin: 0.3rem 0 0.1rem 0;
+            box-shadow: 0 2px 12px rgba(0, 40, 20, 0.04);
+            transition: all 0.2s;
+            justify-self: start;
+        }
+        .section-title i {
+            margin-right: 10px;
+            color: #0f6c3b;
+            font-size: 0.9rem;
+        }
+        .section-title:hover {
+            background: rgba(255, 255, 255, 0.85);
+            transform: translateY(-1px);
+        }
+
+        /* ===== BOTÓN (más chato) ===== */
+        .btn-drive {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            aspect-ratio: 1 / 0.65;
+            /* ← relación ancho/alto más chata (0.65 en lugar de ~0.8) */
+            padding: 0.2rem 0.2rem 0.15rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 12px rgba(0, 30, 20, 0.04);
+            text-decoration: none;
+            color: #1a3a2b;
+            font-weight: 500;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            gap: 0.05rem;
+            cursor: pointer;
+            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+            min-height: 40px;
+        }
+        .btn-drive::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 18px;
+            padding: 1px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(200, 220, 200, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .btn-drive:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: #ffffff;
+            box-shadow: 0 12px 28px -10px rgba(0, 60, 40, 0.25);
+            border-color: rgba(30, 120, 60, 0.2);
+        }
+        .btn-drive:active {
+            transform: scale(0.94);
+            transition-duration: 0.08s;
+        }
+
+        /* ===== CONTENEDOR DEL ICONO ===== */
+        .btn-drive .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex: 1 1 auto;
+            min-height: 0;
+            border-radius: 12px;
+            background: rgba(30, 80, 50, 0.02);
+            transition: all 0.3s ease;
+            padding: 0.1rem;
+            overflow: hidden;
+        }
+        .btn-drive:hover .icon-wrapper {
+            background: rgba(30, 80, 50, 0.06);
+            transform: scale(1.02);
+        }
+
+        /* ===== ICONOS FONT-AWESOME (más pequeños) ===== */
+        .btn-drive i {
+            font-size: 2.2rem;
+            /* reducido para botones más chatos */
+            color: #0f6c3b;
+            transition: transform 0.3s ease;
+        }
+        .btn-drive:hover i {
+            transform: scale(1.06);
+            color: #0a5a30;
+        }
+
+        /* ===== IMAGEN (por si se usa) ===== */
+        .btn-drive img {
+            width: 100%;
+            height: auto;
+            max-height: 90%;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.02));
+            transition: transform 0.3s ease;
+        }
+        .btn-drive:hover img {
+            transform: scale(1.04);
+        }
+
+        /* ===== ETIQUETA ===== */
+        .btn-drive .label {
+            font-size: 0.55rem;
+            font-weight: 600;
+            color: #1a3a2b;
+            letter-spacing: 0.2px;
+            background: rgba(0, 0, 0, 0.02);
+            padding: 0.05rem 0.4rem;
+            border-radius: 40px;
+            transition: background 0.2s;
+            white-space: nowrap;
+            margin-top: 0.05rem;
+        }
+        .btn-drive:hover .label {
+            background: rgba(30, 80, 50, 0.04);
+        }
+
+        /* ===== BADGE NUMÉRICO ===== */
+        .btn-drive .badge-num {
+            position: absolute;
+            top: 3px;
+            right: 6px;
+            font-size: 0.35rem;
+            font-weight: 700;
+            color: rgba(0, 60, 30, 0.15);
+            background: rgba(0, 0, 0, 0.02);
+            padding: 0 5px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            transition: color 0.3s;
+        }
+        .btn-drive:hover .badge-num {
+            color: rgba(0, 60, 30, 0.3);
+        }
+
+        /* ===== PIE DE PÁGINA ===== */
+        .footer-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 1.8rem;
+            padding-top: 1.2rem;
+            border-top: 1.5px solid rgba(30, 80, 50, 0.06);
+            color: #2b4d3a;
+            font-size: 0.7rem;
+            gap: 0.8rem;
+        }
+        .footer-menu .left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .footer-menu .left i {
+            color: #1c6e3d;
+            opacity: 0.7;
+        }
+        .badge-edit {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 0, 0, 0.015);
+            padding: 0.15rem 1rem 0.15rem 0.8rem;
+            border-radius: 60px;
+            border: 1px dashed rgba(30, 80, 50, 0.15);
+            font-size: 0.6rem;
+            color: #19442b;
+        }
+        .badge-edit code {
+            background: rgba(0, 0, 0, 0.04);
+            padding: 0.05rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.55rem;
+            font-family: 'Inter', monospace;
+            color: #0f422b;
+        }
+        .footer-menu .stats {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-weight: 500;
+            color: #1e4d34;
+        }
+        .footer-menu .stats i {
+            color: #1b6e3f;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) {
+            .grid-botones {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0.7rem;
+            }
+            .btn-drive i {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 860px) {
+            .grid-botones {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .btn-drive {
+                aspect-ratio: 1 / 0.7;
+            }
+            .btn-drive i {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .grid-botones {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.6rem;
+            }
+            .btn-drive {
+                aspect-ratio: 1 / 0.75;
+            }
+            .btn-drive i {
+                font-size: 1.6rem;
+            }
+            .header-title h1 {
+                font-size: 1.6rem;
+            }
+            .menu-card {
+                padding: 1.2rem 1rem;
+                border-radius: 32px;
+            }
+            .logo-emblem {
+                height: 50px;
+            }
+            .logo-inia-2026 img {
+                height: 42px;
+            }
+            .section-title {
+                font-size: 0.8rem;
+                padding: 0.3rem 1.2rem;
+            }
+        }
+        @media (max-width: 440px) {
+            .grid-botones {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            .btn-drive {
+                aspect-ratio: 1 / 0.8;
+            }
+            .btn-drive i {
+                font-size: 1.4rem;
+            }
+            .btn-drive .label {
+                font-size: 0.5rem;
+            }
+            .btn-drive .badge-num {
+                font-size: 0.3rem;
+                top: 2px;
+                right: 4px;
+            }
+            .header-title h1 {
+                font-size: 1.2rem;
+            }
+            .header-title .drive-badge {
+                font-size: 0.7rem;
+                padding: 0.15rem 0.8rem;
+            }
+            .footer-menu {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+        }
+
+        /* ===== ANIMACIÓN ===== */
+        a.btn-drive:link,
+        a.btn-drive:visited,
+        a.btn-drive:hover,
+        a.btn-drive:active {
+            text-decoration: none;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-card">
+
+        <!-- ===== ENCABEZADO ===== -->
+        <div class="header-inia">
+            <div class="logo-emblem">
+                <!-- Reemplaza esta imagen por el logo de tu entidad -->
+                <img src="botones/encabezado-inia.png" alt="Encabezado INIA" />
+            </div>
+            <div class="logo-inia-2026">
+                <img src="botones/logo-inia.png" alt="Logo INIA" />
+            </div>
+        </div>
+
+        <!-- ===== TÍTULO ===== -->
+        <div class="header-title">
+            <h1>Repositorio de Enlaces del Estado Peruano</h1>
+            <span class="drive-badge">
+                <i class="fas fa-folder-open"></i> Acceso Rápido
+            </span>
+        </div>
+
+        <!-- ===== GRID DE BOTONES ===== -->
+        <div class="grid-botones">
+
+            <!-- 1. EEA Illpa Puno INIA (10) -->
+            <div class="section-title"><i class="fas fa-tractor"></i> Enlaces de la EEA Illpa Puno · INIA</div>
+
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-leaf"></i></span><span class="label">Enlace 01</span><span class="badge-num">01</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-seedling"></i></span><span class="label">Enlace 02</span><span class="badge-num">02</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-water"></i></span><span class="label">Enlace 03</span><span class="badge-num">03</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-cloud-sun"></i></span><span class="label">Enlace 04</span><span class="badge-num">04</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-mountain"></i></span><span class="label">Enlace 05</span><span class="badge-num">05</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-tree"></i></span><span class="label">Enlace 06</span><span class="badge-num">06</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-cow"></i></span><span class="label">Enlace 07</span><span class="badge-num">07</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-wheat"></i></span><span class="label">Enlace 08</span><span class="badge-num">08</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-apple-alt"></i></span><span class="label">Enlace 09</span><span class="badge-num">09</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-tint"></i></span><span class="label">Enlace 10</span><span class="badge-num">10</span></a>
+
+            <!-- 2. Presupuesto (10) -->
+            <div class="section-title"><i class="fas fa-coins"></i> Enlaces de Presupuesto</div>
+
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-money-bill-wave"></i></span><span class="label">Presupuesto 01</span><span class="badge-num">11</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-file-invoice-dollar"></i></span><span class="label">Presupuesto 02</span><span class="badge-num">12</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-calculator"></i></span><span class="label">Presupuesto 03</span><span class="badge-num">13</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-chart-pie"></i></span><span class="label">Presupuesto 04</span><span class="badge-num">14</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-credit-card"></i></span><span class="label">Presupuesto 05</span><span class="badge-num">15</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-hand-holding-usd"></i></span><span class="label">Presupuesto 06</span><span class="badge-num">16</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-wallet"></i></span><span class="label">Presupuesto 07</span><span class="badge-num">17</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-piggy-bank"></i></span><span class="label">Presupuesto 08</span><span class="badge-num">18</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-file-invoice"></i></span><span class="label">Presupuesto 09</span><span class="badge-num">19</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-chart-line"></i></span><span class="label">Presupuesto 10</span><span class="badge-num">20</span></a>
+
+            <!-- 3. Planificación (5) -->
+            <div class="section-title"><i class="fas fa-calendar-alt"></i> Enlaces de Planificación</div>
+
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-tasks"></i></span><span class="label">Planif. 01</span><span class="badge-num">21</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-clock"></i></span><span class="label">Planif. 02</span><span class="badge-num">22</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-rocket"></i></span><span class="label">Planif. 03</span><span class="badge-num">23</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-flag"></i></span><span class="label">Planif. 04</span><span class="badge-num">24</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-road"></i></span><span class="label">Planif. 05</span><span class="badge-num">25</span></a>
+
+            <!-- 4. Normativa (10) -->
+            <div class="section-title"><i class="fas fa-gavel"></i> Enlaces de Normativa</div>
+
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-book"></i></span><span class="label">Norma 01</span><span class="badge-num">26</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-scale-balanced"></i></span><span class="label">Norma 02</span><span class="badge-num">27</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-file-pdf"></i></span><span class="label">Norma 03</span><span class="badge-num">28</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-file-signature"></i></span><span class="label">Norma 04</span><span class="badge-num">29</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-stamp"></i></span><span class="label">Norma 05</span><span class="badge-num">30</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-landmark"></i></span><span class="label">Norma 06</span><span class="badge-num">31</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-gavel"></i></span><span class="label">Norma 07</span><span class="badge-num">32</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-bullhorn"></i></span><span class="label">Norma 08</span><span class="badge-num">33</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-file-contract"></i></span><span class="label">Norma 09</span><span class="badge-num">34</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-balance-scale"></i></span><span class="label">Norma 10</span><span class="badge-num">35</span></a>
+
+            <!-- 5. Transparencia (5) -->
+            <div class="section-title"><i class="fas fa-eye"></i> Enlaces de Transparencia</div>
+
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-file-alt"></i></span><span class="label">Transp. 01</span><span class="badge-num">36</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-database"></i></span><span class="label">Transp. 02</span><span class="badge-num">37</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-people-arrows"></i></span><span class="label">Transp. 03</span><span class="badge-num">38</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-search"></i></span><span class="label">Transp. 04</span><span class="badge-num">39</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-info-circle"></i></span><span class="label">Transp. 05</span><span class="badge-num">40</span></a>
+
+            <!-- 6. Contraloría (5) -->
+            <div class="section-title"><i class="fas fa-shield-alt"></i> Enlaces de Contraloría</div>
+
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-check-double"></i></span><span class="label">Contraloría 01</span><span class="badge-num">41</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-clipboard-check"></i></span><span class="label">Contraloría 02</span><span class="badge-num">42</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-flag-checkered"></i></span><span class="label">Contraloría 03</span><span class="badge-num">43</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-fingerprint"></i></span><span class="label">Contraloría 04</span><span class="badge-num">44</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-user-shield"></i></span><span class="label">Contraloría 05</span><span class="badge-num">45</span></a>
+
+            <!-- 7. Cursos de Capacitación (10) -->
+            <div class="section-title"><i class="fas fa-chalkboard-teacher"></i> Enlaces de Cursos de Capacitación</div>
+
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-graduation-cap"></i></span><span class="label">Curso 01</span><span class="badge-num">46</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-book-open"></i></span><span class="label">Curso 02</span><span class="badge-num">47</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-laptop-code"></i></span><span class="label">Curso 03</span><span class="badge-num">48</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-user-graduate"></i></span><span class="label">Curso 04</span><span class="badge-num">49</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-video"></i></span><span class="label">Curso 05</span><span class="badge-num">50</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-file-video"></i></span><span class="label">Curso 06</span><span class="badge-num">51</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-pencil-alt"></i></span><span class="label">Curso 07</span><span class="badge-num">52</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-microphone-alt"></i></span><span class="label">Curso 08</span><span class="badge-num">53</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-cogs"></i></span><span class="label">Curso 09</span><span class="badge-num">54</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-brain"></i></span><span class="label">Curso 10</span><span class="badge-num">55</span></a>
+
+            <!-- 8. IA (5) -->
+            <div class="section-title"><i class="fas fa-robot"></i> Enlaces de Inteligencia Artificial</div>
+
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-microchip"></i></span><span class="label">IA 01</span><span class="badge-num">56</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-network-wired"></i></span><span class="label">IA 02</span><span class="badge-num">57</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-dna"></i></span><span class="label">IA 03</span><span class="badge-num">58</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-eye"></i></span><span class="label">IA 04</span><span class="badge-num">59</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-comment-dots"></i></span><span class="label">IA 05</span><span class="badge-num">60</span></a>
+
+            <!-- 9. Otros enlaces (10) -->
+            <div class="section-title"><i class="fas fa-link"></i> Otros Enlaces de Interés</div>
+
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-globe"></i></span><span class="label">Otro 01</span><span class="badge-num">61</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-university"></i></span><span class="label">Otro 02</span><span class="badge-num">62</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-handshake"></i></span><span class="label">Otro 03</span><span class="badge-num">63</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-users"></i></span><span class="label">Otro 04</span><span class="badge-num">64</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-trophy"></i></span><span class="label">Otro 05</span><span class="badge-num">65</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-star"></i></span><span class="label">Otro 06</span><span class="badge-num">66</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-heart"></i></span><span class="label">Otro 07</span><span class="badge-num">67</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-crown"></i></span><span class="label">Otro 08</span><span class="badge-num">68</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-gem"></i></span><span class="label">Otro 09</span><span class="badge-num">69</span></a>
+            <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fas fa-magic"></i></span><span class="label">Otro 10</span><span class="badge-num">70</span></a>
+
+        </div>
+        <!-- fin grid-botones -->
+
+        <!-- ===== PIE DE PÁGINA ===== -->
+        <div class="footer-menu">
+            <div class="left">
+                <i class="fas fa-pen-fancy"></i>
+                <span>Edita los <strong>href</strong> con tus enlaces del Estado.</span>
+            </div>
+            <div class="badge-edit">
+                <i class="fas fa-image"></i>
+                Reemplaza <code>&lt;i&gt;</code> por <code>&lt;img&gt;</code> para iconos personalizados.
+            </div>
+            <div class="stats">
+                <i class="fas fa-cloud"></i> 70 accesos
+            </div>
+        </div>
+
+    </div>
+    <!-- fin menu-card -->
+
+</body>
+</html>
