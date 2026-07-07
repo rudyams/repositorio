@@ -126,11 +126,11 @@
             font-size: 1.1rem;
         }
 
-        /* ===== GRID DE BOTONES (5 columnas) ===== */
+        /* ===== GRID DE BOTONES ===== */
         .grid-botones {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 0.8rem;
+            gap: 0.6rem; /* reducido de 0.8rem */
             margin: 0.6rem 0 1rem;
         }
 
@@ -171,9 +171,8 @@
             justify-content: center;
             text-align: center;
             width: 100%;
-            aspect-ratio: 1 / 0.65;
-            /* ← relación ancho/alto más chata (0.65 en lugar de ~0.8) */
-            padding: 0.2rem 0.2rem 0.15rem;
+            aspect-ratio: 1 / 0.50; /* ← más chato que antes (0.50) */
+            padding: 0.05rem 0.1rem 0.05rem; /* menos padding vertical */
             border-radius: 18px;
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(4px);
@@ -188,7 +187,7 @@
             gap: 0.05rem;
             cursor: pointer;
             animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-            min-height: 40px;
+            min-height: 30px; /* reducido de 40px */
         }
         .btn-drive::before {
             content: '';
@@ -232,10 +231,9 @@
             transform: scale(1.02);
         }
 
-        /* ===== ICONOS FONT-AWESOME (más pequeños) ===== */
+        /* ===== ICONOS FONT-AWESOME (más pequeños para botones chatos) ===== */
         .btn-drive i {
-            font-size: 2.2rem;
-            /* reducido para botones más chatos */
+            font-size: 1.8rem; /* reducido de 2.2rem */
             color: #0f6c3b;
             transition: transform 0.3s ease;
         }
@@ -348,33 +346,37 @@
         @media (max-width: 1100px) {
             .grid-botones {
                 grid-template-columns: repeat(5, 1fr);
-                gap: 0.7rem;
+                gap: 0.5rem;
             }
             .btn-drive i {
-                font-size: 2rem;
+                font-size: 1.6rem;
+            }
+            .btn-drive {
+                aspect-ratio: 1 / 0.50;
             }
         }
         @media (max-width: 860px) {
             .grid-botones {
                 grid-template-columns: repeat(4, 1fr);
+                gap: 0.5rem;
             }
             .btn-drive {
-                aspect-ratio: 1 / 0.7;
+                aspect-ratio: 1 / 0.50;
             }
             .btn-drive i {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
             }
         }
         @media (max-width: 640px) {
             .grid-botones {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 0.6rem;
+                gap: 0.4rem;
             }
             .btn-drive {
-                aspect-ratio: 1 / 0.75;
+                aspect-ratio: 1 / 0.50;
             }
             .btn-drive i {
-                font-size: 1.6rem;
+                font-size: 1.2rem;
             }
             .header-title h1 {
                 font-size: 1.6rem;
@@ -397,13 +399,13 @@
         @media (max-width: 440px) {
             .grid-botones {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
+                gap: 0.3rem;
             }
             .btn-drive {
-                aspect-ratio: 1 / 0.8;
+                aspect-ratio: 1 / 0.50;
             }
             .btn-drive i {
-                font-size: 1.4rem;
+                font-size: 1rem;
             }
             .btn-drive .label {
                 font-size: 0.5rem;
@@ -453,7 +455,6 @@
         <!-- ===== ENCABEZADO ===== -->
         <div class="header-inia">
             <div class="logo-emblem">
-                <!-- Reemplaza esta imagen por el logo de tu entidad -->
                 <img src="botones/encabezado-inia.png" alt="Encabezado INIA" />
             </div>
             <div class="logo-inia-2026">
